@@ -1,0 +1,237 @@
+/* General Styles */
+body {
+    font-family: 'Open Sans', sans-serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+/* Header Styles */
+header {
+    background-color: #4CAF50;
+    padding: 10px 0;
+}
+
+.logo a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 24px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav-menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.nav-menu li a {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* Hero Section Styles */
+.hero-section {
+    background-color: #8BC34A;
+    padding: 120px 0;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.tagline {
+    font-size: 24px;
+    margin-bottom: 40px;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 14px 32px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    background-color: #FF5722;
+    color: #fff;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #FF4500;
+}
+
+/* Features Section Styles */
+.features-section {
+    padding: 80px 0;
+    text-align: center;
+}
+
+.section-heading {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.feature img {
+    max-width: 300px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.feature h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+/* Testimonials Section Styles */
+.testimonials-section {
+    background-color: #f2f2f2;
+    padding: 80px 0;
+    text-align: center;
+}
+
+.testimonial {
+    margin-bottom: 40px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial blockquote {
+    font-style: italic;
+    margin-bottom: 10px;
+}
+
+.testimonial cite {
+    font-weight: bold;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #4CAF50;
+    padding: 20px 0;
+    text-align: center;
+    color: #fff;
+}
+
+footer p {
+    font-size: 14px;
+}
+
+
+
+main {
+    margin-left: 0px;
+    padding: 20px;
+}
+
+
+
+#/* navigation*/
+
+/* Left Navigation Styles */
+.left-nav {
+    width: 200px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+}
+
+.left-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-nav li {
+    margin-bottom: 10px;
+}
+
+.left-nav a {
+    color: #333;
+    text-decoration: none;
+}
+
+.left-nav a:hover {
+    color: #4CAF50;
+}
+
+
+/* Left Navigation Styles */
+.left-nav {
+    width: 200px;
+    background-color: #f2f2f2;
+    padding: 20px;
+}
+
+.left-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.left-nav li {
+    margin-bottom: 10px;
+}
+
+.left-nav a {
+    display: block;
+    color: #fff;
+    text-decoration: none;
+}
+
+.left-nav a:hover {
+    color: #4CAF50;
+}
+
+
+
+
+.left-nav a {
+    color: #000;
+    text-decoration: none;
+}
+
+
+
+.left-nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.container {
+    margin-left: 0px;
+    position: relative;

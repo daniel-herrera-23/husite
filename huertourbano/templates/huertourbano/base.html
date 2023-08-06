@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {% block title %}Cultiva en tu Hogar{% endblock %}</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <script src="{% static 'js/script.js' %}"></script>
+    <header>
+        <nav>
+            <div class="container">
+                <div class="logo">
+                    <a href="/">Cultiva en tu Hogar</a>
+                    <img src="{% static 'images/logo.png' %}" alt="Logo">
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="/propuesta/">Propuesta</a></li>
+                    <li><a href="/testimonials/">Testimonios</a></li>
+                    
+                                  
+                    <li><a href="/about/">Quienes somos</a></li>
+                    <li><a href="/alianzas/">Alianzas</a></li>
+                    <li><a href="/contacto/">Contacto</a></li>
+
+
+                    
+                </ul>
+            </div>
+        </nav>  
+    </header>
+   
+    <main>
+        <div class="content">
+            {% block content %}
+            {% endblock %}
+        </div>
+    </main>
+    <footer>
+        <div class="container">
+            <p>&copy; {% now "Y" %} Cultiva en tu Hogar. All rights reserved.</p>
+            <ul class="footer-nav">
+
+            </ul>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+ 
+  

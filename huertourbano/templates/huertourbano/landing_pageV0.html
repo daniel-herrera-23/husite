@@ -1,0 +1,63 @@
+
+{% extends 'huertourbano/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<section class="hero-section">
+    <div class="container">
+        <h1>Cultiva tu propia comida desde la comodidad de tu hogar</h1>
+        <p class="tagline">Descubre el placer de cultivar tus propios alimentos en casa y disfruta de una vida más saludable.</p>
+        <a href="#contact" class="cta-button">Get Started</a>
+    </div>
+</section>
+
+<nav class="left-nav">
+    <div class="container">
+       <ul>
+           <li><a href="/">Home</a></li>
+           <li><a href="/about">Nosotros</a></li>
+           {% for huerto in huertos %}
+               <li><a href="/huerto/{{ huerto.id }}">{{ huerto.cultivo }}</a></li>
+           {% endfor %}
+           <li><a href="/contact">Contacto</a></li>
+       </ul>
+     </div>
+   </nav>
+   
+<section id="features" class="features-section">
+    <div class="container">
+
+        <h2 class="section-heading">Features</h2>
+        <div class="feature">
+            <img src="{% static 'images/feature1.jpg' %}" alt="Feature 1">
+            <h3>Guias Paso a Paso</h3>
+            <pSigue nuestras instrucciones detalladas para cultivar una variedad de vegetales y otros cultivos.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/feature2.jpg' %}" alt="Feature 2">
+            <h3>Apoyo comunitario</h3>
+            <p>Conecta con otros miembros de la comunidad, compartie tips, y aprende de sus experiencias.</p>
+        </div>
+        <div class="feature">
+            <img src="{% static 'images/feature3.jpg' %}" alt="Feature 3">
+            <h3>Recomendaciones</h3>
+            <p>Obten recomendaciones personalizadas sobre que plantar basado en tu ubicación y disponibilidad de recursos.</p>
+        </div>
+    </div>
+</section>
+
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <h2 class="section-heading">Testimonios</h2>
+        <div class="testimonial">
+            <blockquote>"Yo siempre había deseado sembrar mis alimentos, y este sitio web me ha ayudado a hacerlo de una manera facil y disfrutable. Altamente recomendado!"</blockquote>
+            <cite>John Doe</cite>
+        </div>
+        <div class="testimonial">
+            <blockquote>"Gracias a Cultiva en tu hogar, ahora tengo un cultivo de vegetales en mi patio trasero. Los resultados son sorporendentes!"</blockquote>
+            <cite>Jane Smith</cite>
+        </div>
+    </div>
+</section>
+{% endblock %}

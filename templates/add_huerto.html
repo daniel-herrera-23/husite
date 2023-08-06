@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+  {% block content %}
+
+    <h1>Add Huerto</h1>
+
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ form.as_p }}
+
+      <h2>Images</h2>
+      {{ image_formset.management_form }}
+      {% for image_form in image_formset %}
+        {{ image_form.as_table }}
+      {% endfor %}
+
+      <h2>Videos</h2>
+      {{ video_formset.management_form }}
+      {% for video_form in video_formset %}
+        {{ video_form.as_table }}
+      {% endfor %}
+
+      <button type="submit">Save</button>
+    </form>
+  {% endblock %}

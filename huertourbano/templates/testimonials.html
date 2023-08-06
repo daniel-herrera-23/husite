@@ -1,0 +1,41 @@
+{% extends 'huertourbano/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+<section id="testimonials" class="testimonials-section">
+    <div class="container">
+        <h2 class="section-heading">Testimonios</h2>
+        
+        {% for testimonial in current_page %}
+        <div class="testimonial">
+            <blockquote>{{ testimonial.quote }}</blockquote>
+            <cite>{{ testimonial.author }}</cite>
+        </div>
+        {% endfor %}
+        
+        <div class="testimonial-pagination">
+            {% if current_page.has_previous %}
+                <a href="?page=1">First</a>
+                <a href="?page={{ current_page.previous_page_number }}">Previous</a>
+            {% endif %}
+            
+            <span>Page {{ current_page.number }} of {{ current_page.paginator.num_pages }}</span>
+            
+            {% if current_page.has_next %}
+                <a href="?page={{ current_page.next_page_number }}">Next</a>
+                <a href="?page={{ current_page.paginator.num_pages }}">Last</a>
+            {% endif %}
+        </div>
+
+        <!-- Add a link to return to the landing page -->
+        <div class="return-link">
+            <a href="/">Return to Landing Page</a>
+        </div>
+
+    </div>
+</section>
+{% endblock %}
+
+

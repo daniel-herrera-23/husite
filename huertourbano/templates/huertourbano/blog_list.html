@@ -1,0 +1,24 @@
+<!-- blog_list.html -->
+
+
+
+{% extends 'huertourbano/base.html' %}
+{% load static %}
+
+{% block content %}
+
+
+{% for blog_post in blog_posts %}
+    <h2>{{ blog_post.title }}</h2>
+    <p>{{ blog_post.author }} | {{ blog_post.pub_date }}</p>
+    <img src="{{ blog_post.leading_image.url }}" alt="{{ blog_post.title }}">
+    <p>{{ blog_post.body|safe }}</p>
+    {% if blog_post.is_featured %}
+        <p>Featured Article</p>
+    {% endif %}
+    <hr>
+{% endfor %}
+
+
+
+{% endblock %}

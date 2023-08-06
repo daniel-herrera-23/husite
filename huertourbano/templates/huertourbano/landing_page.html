@@ -1,0 +1,100 @@
+
+{% extends 'huertourbano/base.html' %}
+{% load static %}
+
+{% block content %}
+
+"
+<section class="hero-section">
+   
+        <h1>Cultiva en tu Hogar</h1>
+        <p>"Descubre el placer de cultivar tus propios alimentos en casa y disfruta de una vida más saludable.".</p>
+
+</section>
+
+
+
+    <main class="main">
+        <div class="left-nav">
+            <ul>
+                <li class="top-level"><a href="#">Home</a></li>
+               <!-- <li class="top-level"><a href="#">Por donde empezar</a></li>  -->
+                <li class="top-level"><a href="{% url 'por_donde_empezar' %}">Por donde empezar</a></li>    
+
+                <li class="top-level"><a href="#">Que sembrar / Cultivos</a></li>
+                <ul class="sub-menu">
+		           {% for huerto in huertos %}
+		               <li><a href="/huertos/{{ huerto.id }}">{{ huerto.cultivo }}</a></li>
+		           {% endfor %}                
+                </ul>
+
+                <!-- <li class="top-level"><a href="#">Tecnicas de Cultivo</a></li> >
+                <li class="top-level"><a href="{% url 'tecnicas_de_cultivo' %}">Tecnicas de Cultivo</a></li>
+                 <!--  <li class="top-level"><a href="#">Cuida tu huerto</a></li>  -->
+                 <li class="top-level"><a href="{% url 'cuida_tu_huerto' %}">Cuida tu huerto</a></li>
+            </ul>
+        </div>
+<!--
+        <div class="right-section">
+            <div class="top-blog-post">
+                <h2>Publicaciones Destacadas</h2>
+                <p><b>Cómo mantener tus plantas hidratadas cuando te ausentas unos dias de casa.</b>
+                        Para los que cultivamos alimentos siempre es una preocupación cuando tenemos que salir de nuestra casa unos dias.  Hay manera muy practicas y fáciles para mantener nuestro huerto hidratado durante nuestra ausencia. </p>
+            </div>
+
+-->
+
+<!-- landing_page.html -->
+        <div class="right-section">
+            <div class="top-blog-post">
+                <h2>Publicación Destacada: {{ featured_article.title }}</h2>
+                <p>{{ featured_article.author }} | {{ featured_article.pub_date }}</p>
+                <img src="{{ featured_article.leading_image.url }}" alt="{{ featured_article.title }}">
+                <p>{{ featured_article.body|safe }}</p>
+                <hr>
+            </div>
+           
+
+            <div class="quote-of-the-day">
+                <h2>Frase del día</h2>
+                <p>"Los agricultores cultivamos esperanza y cosechamos futuro."</p>
+                <p>- Anónimo</p>
+            </div>
+        </div>
+    </main>
+
+   <!-- <div class="testimonials">
+        <div class="testimonial">
+            <h3>John Doe</h3>
+            <p>"Yo siempre había deseado sembrar mis alimentos, y este sitio web me ha ayudado a hacerlo de una manera facil y disfrutable. Altamente recomendado!"</p>
+        </div>
+
+        <div class="testimonial">
+            <h3>Jane Smith</h3>
+            <p>"Gracias a Cultiva en tu hogar, ahora tengo un cultivo de vegetales en mi patio trasero. Los resultados son sorporendentes!"</p>
+        </div>
+
+        <div class="testimonial">
+            <h3>David Johnson</h3>
+            <p>"Cultiva en tu Hogar me ha inspirado a vivir de manera sostenible y a producir mis propios vegetales"</p>
+        </div>
+    </div>
+    -->
+
+    <section id="testimonials" class="testimonials-section">
+      <!--  <div class="container">-->
+      
+            
+            {% for testimonial in testimonials %}
+            {% if testimonial.is_visible %}  {# Check if the testimonial is visible #}
+            <div class="testimonial">
+                <blockquote>{{ testimonial.quote }}</blockquote>
+                <cite>{{ testimonial.author }}</cite>
+            </div>
+            {% endif %}
+            {% endfor %}
+            
+
+        <!-- </div>  -->
+    </section>
+{% endblock %}

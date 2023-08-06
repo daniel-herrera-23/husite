@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for huerto in huertos %}
+<h2><a href="/huerto/{{ huerto.id }}/">{{ huerto.cultivo }}</a></h2>
+{% endfor %}

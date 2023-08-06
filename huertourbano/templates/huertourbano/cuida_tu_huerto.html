@@ -1,0 +1,36 @@
+{% extends 'huertourbano/base.html' %}
+{% load static %}
+
+{% block content %}
+
+<body>
+    <div class="containert">
+      <div class="header-">
+       <h2 class="heading">Video tutoriales</h2> 
+       <p class="tagline">Aqui comenzaras un nuevo hobbie/actividad, cultivar tus propios alimentos</p>
+      </div>
+      <div class="video-block">
+          <div class="header-">
+              <h4 class="cta-header">Cuida tu huerto</h4>
+          <p class="tagline">metodos y soluciones contrea plagas, y metodos para mantener tu huerto sano y saludable.</p> 
+          </div>
+          <div class="videos-group">
+              <video class="video-show" width="500" height="500" controls>
+                  <source src="videos/1.mp4" type="video/mp4">
+                </video>
+                <video class="video-show" width="500" height="500" controls>
+                  <source src="videos/1.mp4" type="video/mp4">
+                </video>
+                <video class="video-show" width="500" height="500" controls>
+                  <source src="videos/1.mp4" type="video/mp4">
+                </video>
+                
+          </div>
+      </div>
+    </div>
+  </body>
+  
+
+
+
+{% endblock %}

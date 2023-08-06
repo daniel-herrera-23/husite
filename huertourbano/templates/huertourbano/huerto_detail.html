@@ -1,0 +1,99 @@
+{% extends 'huertourbano/base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="wrap">
+  <div class="Plant-specie">
+    <h1>{{ huerto.cultivo }}</h1>
+  </div>
+
+  <div class="details">
+    <div class="detail">
+      <h2>Características:</h2>
+      <p>{{ huerto.caracteristicas }}</p>
+    </div>
+
+    <div class="detail">
+      <h2>Nutrientes:</h2>
+      <p>{{ huerto.nutrientes }}</p>
+    </div>
+
+    <div class="detail">
+      <h2>Proceso de Siembra:</h2>
+      <p>{{ huerto.procsiembra }}</p>
+    </div>
+
+    <div class="detail">
+      <h2>Cuidados:</h2>
+      <p>{{ huerto.cuidados }}</p>
+    </div>
+
+    <div class="detail">
+      <h2>Requerimientos:</h2>
+      <p>{{ huerto.requerimientos }}</p>
+    </div>
+
+    <div class="detail">
+      <h2>Cosecha:</h2>
+      <p>{{ huerto.cosecha }}</p>
+    </div>
+
+    <div class="detail">
+      <h2>Estado:</h2>
+      <p>{{ huerto.estado }}</p>
+    </div>
+
+    <div class="detail">
+      <h2>Imágenes:</h2>
+      <!--
+      {% for image in images %}
+        <p>{{ image.descripcion }}</p>
+        <img src="{{ image.image.url }}" alt="{{ image.descripcion }}">
+      {% endfor %}
+      -->
+    </div>
+
+    <div class="container">
+      {% for x in image_formset.images %}
+        {% if forloop.first %}
+          <div class="row">
+        {% endif %}
+        <div class="col-lg-4 col-md-4 col-12">
+          <div class="text-center mt-2">
+            <img src="{{ x.image.image }}" height="70%" width="70%" class="img-thumbnail" alt="...">
+            <h2 class="text-center">{{ x.descripcion }}</h2>
+            
+            <!-- Debug information -->
+            {% debug x.descripcion %}
+            {% debug x.image.image %}
+          </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}
+          </div><div class="row">
+        {% endif %}
+        {% if forloop.last %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+
+    <!--
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      {{ image_formset.management_form }}
+      {% for image_form in image_formset %}
+        {{ image_form.as_table }}
+        <img src="{{ image.image.url }}" alt="{{ image.descripcion }}">
+      {% endfor %}
+      <button type="submit">Save Images</button>
+    </form>
+    -->
+
+    <h2>Videos:</h2>
+    {% for video in videos %}
+      <p>{{ video.descripcion }}</p>
+      <iframe width="560" height="315" src="{{ video.video_url }}" frameborder="0" allowfullscreen></iframe>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
