@@ -28,7 +28,10 @@ SECRET_KEY = 'django-insecure-u-7z(=e$rka_=$b36byt!@z_i!daph7uj2jmlma&usf&jrn(n%
 DEBUG = False
 
 #ALLOWED_HOSTS = ['.vercel.app']
-ALLOWED_HOSTS = ['*']
+#ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
+
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
 
 # Application definition
@@ -152,3 +155,7 @@ MEDIA_URL = '/media/'
 
 
 CKEDITOR_UPLOAD_PATH = 'ckeditor/'
+
+import os
+from django.core.management.utils import get_random_secret_key
+SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
